@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CMS</string>
+    <string name="username">username</string>
+    <string name="password">Password</string>
+    <string name="Confirmpassword">Confirm Password</string>
+    <string name="CMS">Club Management System</string>
+    <string name="email">Email</string>
+    <string name="login">LOGIN</string>
+    <string name="Loginasadmin">LOGIN AS ADMIN</string>
+    <string name="top_icon">TOP ICON</string>
+    <string name="forgot_password">FORGOT PASSWORD?</string>
+    <string name="new_user_register_now">New User? Register Now</string>
+</resources>

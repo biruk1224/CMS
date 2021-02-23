@@ -5,11 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.cmss.Adapter.RecyclerAdapter;
 import com.example.cmss.model.Users;
+import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -36,6 +40,29 @@ public class User extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
+        final NavigationView nav_view =findViewById(R.id.nv1);
+        nav_view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                int id = menuItem.getItemId();
+                if(id == R.id.events)
+                {
+                    startActivity(new Intent(getApplicationContext(),MainActivity2.class));
+                }
+                if(id == R.id.logout)
+                {
+                    // Sign out
+                    FirebaseAuth.getInstance().signOut();
+                    startActivity(new Intent(getApplicationContext(),Login.class));
+                }
+                if(id == R.id.attendance)
+                {
+                    startActivity(new Intent(getApplicationContext(),Attendance.class));
+                }
+                return true;
+            }
+        });
+
         recyclerView =findViewById(R.id.recyclerview);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
@@ -61,7 +88,6 @@ public class User extends AppCompatActivity {
 
 
 
-
     }
     private void GetDataFromFirebase() {
         Query query = myRef.child("Users");
@@ -75,7 +101,7 @@ public class User extends AppCompatActivity {
                     for (DataSnapshot snapshot2 : snapshot.getChildren()) {
                         if(snapshot2.exists()) {
                               snapshot2.getKey().toString();
-                              FullName = snapshot2.getKey();
+                              FullName = snapshot2.child("name").toString();
                             //Names = FirebaseAuth.getInstance().getCurrentUser().getEmail().replace("@gmail.com", "");
 
 

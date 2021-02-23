@@ -16,18 +16,21 @@ class MainActivity2 : AppCompatActivity() {
 
 
         lists.layoutManager = LinearLayoutManager(this)
-        lists.adapter = ImageAdapter(ticket,pics)
+        lists.adapter = ImageAdapter(ticket, pics)
 
 
     }
-    private fun addtolist(ticketlist:String,picslist:Int){
+
+    private fun addtolist(ticketlist: String, picslist: Int) {
         ticket.add(ticketlist)
         pics.add((picslist))
     }
-    private fun events(){
+
+    private fun events() {
         addtolist("Starts at 2:00pm", R.drawable.dsc_2021_header)
-        addtolist("Starts at 3.00am",R.drawable.dsc_2021_header)
-        addtolist("starts at 5:00pm",R.drawable.dsc_2021_header)
+        addtolist("Starts at 3.00am", R.drawable.h)
+        addtolist("starts at 5:00pm", R.drawable.dsc_2021_header)
+
 
     }
 }

@@ -2,6 +2,7 @@ package com.example.cmss.Adapter;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.cmss.Attendance;
 import com.example.cmss.R;
 import com.example.cmss.model.Users;
 
@@ -43,13 +45,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
         holder.textView.setText(usersArrayList.get(position).getName());
 
-        holder.button.setOnClickListener(new View.OnClickListener() {
+        holder.button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-             //   Intent intent = new Intent(context, GroupChatActivity.class);
-               // intent.putExtra("Creaters",holder.textView.getText());
+               Intent intent = new Intent(context, Attendance.class);
+                //intent.putExtra("Creaters",holder.textView.getText());
                 //intent.putExtra("joiner",1);
-                //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+               // intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 //context.startActivity(intent);
             }
         });

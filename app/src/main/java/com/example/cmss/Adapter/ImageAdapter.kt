@@ -9,8 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cmss.R
+import com.example.cmss.ticket_number
 
 class ImageAdapter(private var date:List<String>, private var pics:List<Int>) : RecyclerView.Adapter<ImageAdapter.ViewHolder>(){
     inner class ViewHolder(itemview:View) : RecyclerView.ViewHolder(itemview){
@@ -19,6 +21,9 @@ class ImageAdapter(private var date:List<String>, private var pics:List<Int>) : 
         init {
             itemview.setOnClickListener { View -> val position: Int = adapterPosition
                 //  Toast.makeText(itemview.context,"successfull" +itemrating.text, Toast.LENGTH_LONG).show()
+                val intent = Intent(itemview.context, ticket_number::class.java)
+
+
 
             }
         }
