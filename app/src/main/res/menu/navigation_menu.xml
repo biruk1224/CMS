@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/attendance"
+        android:icon="@drawable/ic_user"
+        android:title="Attendance" />
+    <item
+        android:id="@+id/events"
+        android:icon="@drawable/ic_baseline_event_24"
+        android:title="Events" />
+    <item
+        android:id="@+id/logout"
+        android:icon="@drawable/ic_lock"
+        android:title="Logout" />
+
+</menu>
