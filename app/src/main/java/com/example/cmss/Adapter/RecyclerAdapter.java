@@ -52,7 +52,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                 //intent.putExtra("Creaters",holder.textView.getText());
                 //intent.putExtra("joiner",1);
                // intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                //context.startActivity(intent);
+                context.startActivity(intent);
             }
         });
 

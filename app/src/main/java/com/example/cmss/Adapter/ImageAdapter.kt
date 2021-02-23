@@ -22,6 +22,7 @@ class ImageAdapter(private var date:List<String>, private var pics:List<Int>) : 
             itemview.setOnClickListener { View -> val position: Int = adapterPosition
                 //  Toast.makeText(itemview.context,"successfull" +itemrating.text, Toast.LENGTH_LONG).show()
                 val intent = Intent(itemview.context, ticket_number::class.java)
+                itemview.context.startActivity(intent)
 
 
 

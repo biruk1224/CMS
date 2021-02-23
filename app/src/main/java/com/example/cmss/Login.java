@@ -140,7 +140,7 @@ public class Login extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
-                    startActivity(new Intent(getApplicationContext(),MainActivity2.class));
+                    startActivity(new Intent(getApplicationContext(),User.class));
 
                 }
             });
